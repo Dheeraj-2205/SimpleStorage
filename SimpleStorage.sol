@@ -4,36 +4,27 @@ pragma solidity >=0.4.16 <0.9.0;
 
 
 contract SimpleStorage{
-    struct Person{
+    uint256 myFavoriteNumber;
+
+    struct Person {
+        uint256 favoriteNumber;
         string name;
-        uint256 favouriteNumber;
     }
-    struct Animals{
-        string name;
-        string species;
-    }
+    // uint256[] public anArray;
+    Person[] public listOfPeople;
 
-    Person[] public people;
-    Animals[] public  animals;
+    mapping(string => uint256) public nameToFavoriteNumber;
 
-    mapping (string => uint256) public nameToFavouriteNumber;
-
-    constructor(){
-        animals.push(Animals("billu kaatebazz" , "doggy"));
-        animals.push(Animals("ramesh hatayaara" , "cat"));
-        animals.push(Animals("dhobi lattbaaz" , "crow"));
+    function store(uint256 _favoriteNumber) public virtual {
+        myFavoriteNumber = _favoriteNumber;
     }
 
-    function addAnimals (string memory _name , string memory _species) public {
-        animals.push(Animals(_name , _species));
+    function retrieve() public view returns (uint256) {
+        return myFavoriteNumber;
     }
 
-    function addPerson (string memory _name, uint256 _favouriteNumber) public {
-        people.push(Person(_name , _favouriteNumber));
-        nameToFavouriteNumber[_name] = _favouriteNumber;
-    }
-
-    function animalsCount() public view returns  (uint256){
-        return animals.length;
+    function addPerson(string memory _name, uint256 _favoriteNumber) public {
+        listOfPeople.push(Person(_favoriteNumber, _name));
+        nameToFavoriteNumber[_name] = _favoriteNumber;
     }
 }
