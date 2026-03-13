@@ -15,7 +15,7 @@ contract Counter {
 
     function decreament() public CheckOwner {
         require(count > 0, "no less than 0");
-        count = count;
+        count = count - 1;
     }
 
     function reset() public CheckOwner {
