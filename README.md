@@ -55,12 +55,31 @@ A voting system where owner add candidates and users vote once.
 - Multiple modifiers
 - Input Validation 
 
+---
+### 05 - EthPiggyBank
+A samrt contract piggy bank where anyone can deposits ETH,
+but only the owner can withdraw all funds
+
+
+| Deposits | Anyone can deposit ETH |
+| Withdraw | Only owner can withdraw |
+| Balance Check | Anyone can check their own balance |
+| Total Balance | Check total ETH in contract |
+
+#### 5.1 Concept  Learned
+- `payable` functions - receiving ETH
+- `msg.value` - amount of ETH sent
+- `address(this).balance` - contract's total ETH
+- `.call{value:amount} - sending ETH safely
+- `immutable` variables - gas optimization 
+
 
 ## Security Concepts Practiced
 - Access Control - `onlyOwner` pattern
 - Input Validation - `require` statements
 - Custom Modifiers - Reusable guards
 - Type Safety - Preventing type mismatches
+- Balance is set to zero before transferring ETH to prevent `reentrancy attacks`.
 
 ## About
 
