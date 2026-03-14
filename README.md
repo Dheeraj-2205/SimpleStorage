@@ -66,7 +66,7 @@ but only the owner can withdraw all funds
 | Balance Check | Anyone can check their own balance |
 | Total Balance | Check total ETH in contract |
 
-#### 5.1 Concept  Learned
+** Concepts Practiced: **
 - `payable` functions - receiving ETH
 - `msg.value` - amount of ETH sent
 - `address(this).balance` - contract's total ETH
