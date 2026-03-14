@@ -45,6 +45,17 @@ Increament, decreament , and reset a counter with owner-only reset.
 
 ---
 
+### 04 - SimpleVoting
+A voting system where owner add candidates and users vote once.
+
+** Concepts Practiced **
+- `struct`
+- Dynamic arrays
+- `mapping(address => bool)`
+- Multiple modifiers
+- Input Validation 
+
+
 ## Security Concepts Practiced
 - Access Control - `onlyOwner` pattern
 - Input Validation - `require` statements
